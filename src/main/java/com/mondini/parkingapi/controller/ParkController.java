@@ -12,33 +12,29 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.mondini.parkingapi.model.ParkModel;
 
-
-
-
 @Controller
 @RequestMapping("/park")
 public class ParkController {
-	
+
 	private static final Log LOG = LogFactory.getLog(ParkController.class);
-	
-	//ADDIN
+
+	// ADDIN
 	@PostMapping("/addin")
-	public void addIn(@ModelAttribute(name="park") ParkModel parkModel) {
+	public void addIn(@ModelAttribute(name = "park") ParkModel parkModel) {
 		LOG.info("--ADD-IN");
 	}
-	
-	//ADDOut
+
+	// ADDOut
 	@PostMapping("/remove")
-	public void remove(@ModelAttribute(name="park") ParkModel parkModel) {
+	public void remove(@ModelAttribute(name = "park") ParkModel parkModel) {
 		LOG.info("--REMOVE");
 	}
-	
-	//List
+
+	// List
 	@GetMapping("/entrances")
-	public List<ParkModel> getAllParks(){
-		
+	public List<ParkModel> getAllParks() {
+
 		return null;
 	}
-	
 
 }
