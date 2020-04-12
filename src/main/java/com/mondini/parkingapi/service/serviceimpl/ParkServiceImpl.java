@@ -1,5 +1,8 @@
 package com.mondini.parkingapi.service.serviceimpl;
 
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -26,15 +29,13 @@ public class ParkServiceImpl implements ParkService{
 	
 	
 	@Override
-	public Park getVisitor() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Park>  getVisitor() {
+		return parkRepository.findAll();
 	}
 
 	@Override
-	public Park getVisitor(PersonModel personModel) {
-		// TODO Auto-generated method stub
-		return null;
+	public Optional<Park> getVisitor(PersonModel personModel) {
+		return parkRepository.findById(personModel.getRut());
 	}
 
 	@Override

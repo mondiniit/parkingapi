@@ -10,4 +10,5 @@ import com.mondini.parkingapi.entity.Park;
 @Repository("parkRepository")
 public interface ParkRepository extends JpaRepository<Park, Serializable> {
 
+	
 }
