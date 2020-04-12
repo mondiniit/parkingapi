@@ -20,11 +20,11 @@ public class Park {
 	private int id;
 	
 	@Getter @Setter
-	@Column(name="in")
+	@Column(name="entered")
 	private String in;
 	
 	@Getter @Setter
-	@Column(name="out")
+	@Column(name="gone")
 	private String out;
 	
 	@Getter @Setter

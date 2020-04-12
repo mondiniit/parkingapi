@@ -1,18 +1,8 @@
 spring:
-  h2:
-    console:
-      enabled: true
-      path: /h2
   datasource:
-    url: jdbc:h2:file:~/test
-    username: sa
-    password:
-    driverClassName: org.h2.Driver
-
-#  datasource:
-#    url: jdbc:mysql://localhost:3306/mydb?useSSL=false
-#    username: root
-#    password: root1234
+    url: jdbc:mysql://db4free.net:3306/parkingapi?useSSL=false
+    username: rootparking
+    password: rootparking
   jpa:
     show-sql: true
     hibernate:
@@ -21,6 +11,3 @@ spring:
 #    properties:
 #      hibernate:
 #        dialect: org.hibernate.dialect.MySQL5Dialect
-  
-
-        
