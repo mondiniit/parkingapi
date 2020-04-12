@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import com.mondini.parkingapi.entity.Park;
 
-@Repository
+@Repository("parkRepository")
 public interface ParkRepository extends JpaRepository<Park, Serializable> {
 
 }
