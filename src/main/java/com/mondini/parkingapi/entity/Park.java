@@ -10,13 +10,13 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name="park")
-public class ParkEntity {
+@Table(name="parks")
+public class Park {
 
+	@Getter @Setter
 	@Id
 	@GeneratedValue
 	@Column(name="id")
-	@Getter @Setter
 	private int id;
 	
 	@Getter @Setter
@@ -43,7 +43,7 @@ public class ParkEntity {
 	@Column(name="appartament")
 	private String appartament;
 
-	public ParkEntity(int id, String in, String out, String day, String visitor, String rut, String appartament) {
+	public Park(int id, String in, String out, String day, String visitor, String rut, String appartament) {
 		super();
 		this.id = id;
 		this.in = in;
@@ -54,7 +54,7 @@ public class ParkEntity {
 		this.appartament = appartament;
 	}
 	
-	public ParkEntity() {}
+	public Park() {}
 	
 	
 }

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.mondini.parkingapi.model.Park;
+import com.mondini.parkingapi.model.ParkModel;
 
 
 
@@ -23,19 +23,19 @@ public class ParkController {
 	
 	//ADDIN
 	@PostMapping("/addin")
-	public void addIn(@ModelAttribute(name="park") Park parkModel) {
+	public void addIn(@ModelAttribute(name="park") ParkModel parkModel) {
 		LOG.info("--ADD-IN");
 	}
 	
 	//ADDOut
 	@PostMapping("/remove")
-	public void remove(@ModelAttribute(name="park") Park parkModel) {
+	public void remove(@ModelAttribute(name="park") ParkModel parkModel) {
 		LOG.info("--REMOVE");
 	}
 	
 	//List
 	@GetMapping("/entrances")
-	public List<Park> getAllParks(){
+	public List<ParkModel> getAllParks(){
 		
 		return null;
 	}

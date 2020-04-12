@@ -3,7 +3,7 @@ package com.mondini.parkingapi.model;
 import lombok.Getter;
 import lombok.Setter;
 
-public class Park {
+public class ParkModel {
 	
 	@Getter @Setter
 	private String in;
@@ -17,7 +17,7 @@ public class Park {
 	@Getter @Setter
 	private String day;
 
-	public Park(String in, String out, String appartament, String day) {
+	public ParkModel(String in, String out, String appartament, String day) {
 		super();
 		this.in = in;
 		this.out = out;
@@ -25,6 +25,6 @@ public class Park {
 		this.day = day;
 	}
 	
-	public Park() {}
+	public ParkModel() {}
 
 }
