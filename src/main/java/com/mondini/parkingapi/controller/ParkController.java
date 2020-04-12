@@ -1,7 +1,5 @@
 package com.mondini.parkingapi.controller;
 
-import java.util.List;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,8 +48,13 @@ public class ParkController {
 
 	// List
 	@GetMapping("/entrances")
-	public @ResponseBody Park getAllParks(){
+	public @ResponseBody Park getAllVisitors(){
 		return parkService.getVisitor(); 
+	}
+	
+	@GetMapping("/entrances/{rut}")
+	public @ResponseBody Park getVisitor(@ModelAttribute(name = "rut") String rut){
+		return parkService.getVisitor(rut); 
 	}
 
 }
