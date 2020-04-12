@@ -46,13 +46,8 @@ public class ParkController {
 
 	// List
 	@GetMapping("/entrances")
-<<<<<<< HEAD
 	public @ResponseBody Park getAllVisitors(){
-		return parkService.getVisitor(); 
-=======
-	public @ResponseBody Park getAllParks() {
 		return parkService.getVisitor();
->>>>>>> c330dbf814632764da8f838ef6dbe7e46003a127
 	}
 	
 	@GetMapping("/entrances/{rut}")
