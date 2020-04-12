@@ -16,13 +16,12 @@ import com.mondini.parkingapi.entity.Park;
 import com.mondini.parkingapi.model.ParkModel;
 import com.mondini.parkingapi.service.ParkService;
 
-
 @Controller
 @RequestMapping("/park")
 public class ParkController {
 
 	private static final Log LOG = LogFactory.getLog(ParkController.class);
-	
+
 	@Autowired
 	@Qualifier("parkServiceImpl")
 	private ParkService parkService;
@@ -32,12 +31,11 @@ public class ParkController {
 	public void addIn(@ModelAttribute(name = "park") ParkModel parkModel) {
 		LOG.info("--ADD-IN");
 	}
-	
-	//ADDIN
+
+	// ADDIN
 	@PostMapping("/addin/{park}")
-	public void addIn(@ModelAttribute(name="park") ParkModel parkModel, Model model) {
-		
-	
+	public void addIn(@ModelAttribute(name = "park") ParkModel parkModel, Model model) {
+
 	}
 
 	// ADDOut
@@ -48,8 +46,13 @@ public class ParkController {
 
 	// List
 	@GetMapping("/entrances")
+<<<<<<< HEAD
 	public @ResponseBody Park getAllVisitors(){
 		return parkService.getVisitor(); 
+=======
+	public @ResponseBody Park getAllParks() {
+		return parkService.getVisitor();
+>>>>>>> c330dbf814632764da8f838ef6dbe7e46003a127
 	}
 	
 	@GetMapping("/entrances/{rut}")
