@@ -1,20 +1,13 @@
 package com.mondini.parkingapi.model;
 
-import lombok.Getter;
-import lombok.Setter;
-
 public class ParkModel {
 	
-	@Getter @Setter
 	private String in;
 	
-	@Getter @Setter
 	private String out;
 	
-	@Getter @Setter
 	private String Appartament;
 	
-	@Getter @Setter
 	private String day;
 
 	public ParkModel(String in, String out, String appartament, String day) {
@@ -26,5 +19,37 @@ public class ParkModel {
 	}
 	
 	public ParkModel() {}
+
+	public String getIn() {
+		return in;
+	}
+
+	public void setIn(String in) {
+		this.in = in;
+	}
+
+	public String getOut() {
+		return out;
+	}
+
+	public void setOut(String out) {
+		this.out = out;
+	}
+
+	public String getAppartament() {
+		return Appartament;
+	}
+
+	public void setAppartament(String appartament) {
+		Appartament = appartament;
+	}
+
+	public String getDay() {
+		return day;
+	}
+
+	public void setDay(String day) {
+		this.day = day;
+	}
 
 }

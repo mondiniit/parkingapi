@@ -29,6 +29,7 @@ public class ParkController {
 	// ADDIN
 	@PostMapping("/addin")
 	public void addIn(@ModelAttribute(name = "park") ParkModel parkModel) {
+		
 		LOG.info("--ADD-IN");
 	}
 
@@ -52,7 +53,7 @@ public class ParkController {
 	
 	@GetMapping("/entrances/{rut}")
 	public @ResponseBody Park getVisitor(@ModelAttribute(name = "rut") String rut){
-		return parkService.getVisitor(rut); 
+		return parkService.getVisitor(); 
 	}
 
 }
