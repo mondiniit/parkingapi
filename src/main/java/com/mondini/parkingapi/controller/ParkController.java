@@ -1,7 +1,5 @@
 package com.mondini.parkingapi.controller;
 
-import java.util.List;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,13 +16,12 @@ import com.mondini.parkingapi.entity.Park;
 import com.mondini.parkingapi.model.ParkModel;
 import com.mondini.parkingapi.service.ParkService;
 
-
 @Controller
 @RequestMapping("/park")
 public class ParkController {
 
 	private static final Log LOG = LogFactory.getLog(ParkController.class);
-	
+
 	@Autowired
 	@Qualifier("parkServiceImpl")
 	private ParkService parkService;
@@ -34,12 +31,11 @@ public class ParkController {
 	public void addIn(@ModelAttribute(name = "park") ParkModel parkModel) {
 		LOG.info("--ADD-IN");
 	}
-	
-	//ADDIN
+
+	// ADDIN
 	@PostMapping("/addin/{park}")
-	public void addIn(@ModelAttribute(name="park") ParkModel parkModel, Model model) {
-		
-	
+	public void addIn(@ModelAttribute(name = "park") ParkModel parkModel, Model model) {
+
 	}
 
 	// ADDOut
@@ -50,8 +46,8 @@ public class ParkController {
 
 	// List
 	@GetMapping("/entrances")
-	public @ResponseBody Park getAllParks(){
-		return parkService.getVisitor(); 
+	public @ResponseBody Park getAllParks() {
+		return parkService.getVisitor();
 	}
 
 }
