@@ -30,7 +30,7 @@ public class ParkController {
 	private ParkService parkService;
 
 	// ADDIN
-	@PostMapping("/addin")
+	@PostMapping("/checkin")
 	public void addIn(@ModelAttribute(name = "park") ParkModel parkModel) {
 		
 		LOG.info("--ADD-IN");
@@ -44,7 +44,7 @@ public class ParkController {
 	}
 
 	// ADDOut
-	@PostMapping("/remove")
+	@PostMapping("/checkout")
 	public void remove(@ModelAttribute(name = "park") ParkModel parkModel) {
 		LOG.info("--REMOVE");
 	}

@@ -34,8 +34,8 @@ public class ParkServiceImpl implements ParkService{
 	}
 
 	@Override
-	public Optional<Park> getVisitor(PersonModel personModel) {
-		return parkRepository.findById(personModel.getRut());
+	public Park getVisitor(PersonModel personModel) {
+		return parkRepository.find(personModel.getRut());
 	}
 
 	@Override
