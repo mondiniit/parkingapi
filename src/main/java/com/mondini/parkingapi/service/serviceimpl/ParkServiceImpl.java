@@ -13,6 +13,7 @@ import com.mondini.parkingapi.model.CarModel;
 import com.mondini.parkingapi.model.ParkModel;
 import com.mondini.parkingapi.model.PersonModel;
 import com.mondini.parkingapi.repository.ParkRepository;
+import com.mondini.parkingapi.repository.QueryDSLParkRepo;
 import com.mondini.parkingapi.service.ParkService;
 
 @Service("parkServiceImpl")
@@ -27,6 +28,10 @@ public class ParkServiceImpl implements ParkService{
 	@Qualifier("parkConverter")
 	private ParkConverter parkConverter;
 	
+	@Autowired
+	@Qualifier("queryDSLParkRepo")
+	private QueryDSLParkRepo queryDslParkRep;
+	
 	
 	@Override
 	public List<Park>  getVisitor() {
@@ -35,7 +40,7 @@ public class ParkServiceImpl implements ParkService{
 
 	@Override
 	public Park getVisitor(PersonModel personModel) {
-		return parkRepository.find(personModel.getRut());
+		return queryDslParkRep.find(personModel);
 	}
 
 	@Override

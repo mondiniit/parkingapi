@@ -7,6 +7,9 @@ import org.springframework.stereotype.Repository;
 
 import com.mondini.parkingapi.entity.Park;
 import com.mondini.parkingapi.entity.QPark;
+import com.mondini.parkingapi.model.PersonModel;
+import com.querydsl.core.BooleanBuilder;
+import com.querydsl.core.types.Predicate;
 import com.querydsl.jpa.impl.JPAQuery;
 
 @Repository("queryDSLParkRepo")
@@ -17,17 +20,17 @@ public class QueryDSLParkRepo {
 	@PersistenceContext
 	private EntityManager em;
 
-	public void find(boolean exist) {
+	public Park find(PersonModel personModel) {
 		JPAQuery<Park> query = new JPAQuery<Park>(em);
-		
-		if(exist) {
-			
+		BooleanBuilder predicateBuilder = new BooleanBuilder(qPark.rut.isNotNull());
+
+		if (!personModel.getRut().isEmpty()) {
+			Predicate right = qPark.rut.contains("-");
+			predicateBuilder.and(right);
+		} else {
+			//solve 2nd solution
 		}
-		else {
-			
-		}
-		query.select(qPark).from(qPark).where(qPark.rut.eq(""));
+		return query.select(qPark).from(qPark).where(predicateBuilder).fetchOne();
 	}
-	
-	
+
 }
